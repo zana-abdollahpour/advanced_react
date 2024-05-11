@@ -1,7 +1,15 @@
 import "./App.css";
 
+import ControlledForm from "./components/form/controlled-form";
+import UncontrolledForm from "./components/form/uncontrolled-form";
+
 function App() {
-  return <div>Initial commit</div>;
+  return (
+    <>
+      <UncontrolledForm />
+      <ControlledForm />
+    </>
+  );
 }
 
 export default App;
