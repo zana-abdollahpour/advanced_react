@@ -2,6 +2,7 @@ import axios from "axios";
 import "./App.css";
 
 import DataSource from "./components/data-source";
+import DataSourceRender from "./components/data-source-render";
 import ResourceLoader from "./components/resource-loader";
 import { UserInfo } from "./components/user-info";
 
@@ -23,6 +24,11 @@ function App() {
       >
         <UserInfo />
       </DataSource>
+
+      <DataSourceRender
+        getData={() => getDataFromServer("/users/1")}
+        render={(resource) => <UserInfo user={resource} />}
+      />
     </div>
   );
 }
