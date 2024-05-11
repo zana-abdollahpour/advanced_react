@@ -1,13 +1,21 @@
+import { useState } from "react";
 import "./App.css";
 
-import ControlledForm from "./components/form/controlled-form";
-import UncontrolledForm from "./components/form/uncontrolled-form";
+import { ControlledModal } from "./components/modal/controlled-modal";
 
 function App() {
+  const [shouldBeDisplayed, setShouldBeDisplayed] = useState(false);
   return (
     <>
-      <UncontrolledForm />
-      <ControlledForm />
+      <ControlledModal
+        shouldBeDisplayed={shouldBeDisplayed}
+        onClose={() => setShouldBeDisplayed(false)}
+      >
+        <h3>Body of Modal</h3>
+      </ControlledModal>
+      <button onClick={() => setShouldBeDisplayed((cur) => !cur)}>
+        {shouldBeDisplayed ? "Hide Modal" : "Display Modal"}
+      </button>
     </>
   );
 }
