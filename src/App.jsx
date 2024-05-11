@@ -1,18 +1,39 @@
 import "./App.css";
 
-import SplitScreen from "./components/split-screen";
+import RegularList from "./components/list/RegularList";
+import NumberedList from "./components/list/Numbered";
 
-const LeftSideComp = () => <h2 style={{ background: "purple" }}>Left Comp</h2>;
-const RightSideComp = () => (
-  <h2 style={{ background: "yellow" }}>Right Comp</h2>
-);
+import { authors } from "./data/authors";
+import { books } from "./data/books";
+import SmallAuthorListItem from "./components/authors/SmallListItem";
+import LargeAuthorListItem from "./components/authors/LargeListItem";
+import SmallBookListItem from "./components/books/SmallListItem";
+import LargeBookListItem from "./components/books/LargeListItems";
 
 function App() {
   return (
-    <SplitScreen leftWidth={1} rightWidth={3}>
-      <LeftSideComp />
-      <RightSideComp />
-    </SplitScreen>
+    <>
+      <RegularList
+        items={authors}
+        sourceName="author"
+        ItemComponent={SmallAuthorListItem}
+      />
+      <NumberedList
+        items={authors}
+        sourceName="author"
+        ItemComponent={LargeAuthorListItem}
+      />
+      <RegularList
+        items={books}
+        sourceName="book"
+        ItemComponent={SmallBookListItem}
+      />
+      <NumberedList
+        items={books}
+        sourceName="book"
+        ItemComponent={LargeBookListItem}
+      />
+    </>
   );
 }
 
