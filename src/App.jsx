@@ -1,12 +1,12 @@
 import "./App.css";
 
 import { UserInfo } from "./components/user-info";
-import logProps from "./components/log-props";
+import includeUser from "./components/include-user";
 
-const UserInfoWrapper = logProps(UserInfo);
+const UserInfoWithUser = includeUser(UserInfo, "4");
 
 function App() {
-  return <UserInfoWrapper test="test" b="sth" />;
+  return <UserInfoWithUser />;
 }
 
 export default App;
