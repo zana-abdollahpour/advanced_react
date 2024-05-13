@@ -1,12 +1,9 @@
 import "./App.css";
 
-import { UserInfo } from "./components/user-info";
-import includeUser from "./components/include-user";
-
-const UserInfoWithUser = includeUser(UserInfo, "4");
+import { UserForm } from "./components/user-form";
 
 function App() {
-  return <UserInfoWithUser />;
+  return <UserForm />;
 }
 
 export default App;
