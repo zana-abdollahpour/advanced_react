@@ -1,7 +1,12 @@
+import mitt from "mitt";
 import "./App.css";
 
+import ParentComponent from "./components/parent";
+
+export const emitter = mitt();
+
 function App() {
-  return <div>Initial commit</div>;
+  return <ParentComponent />;
 }
 
 export default App;
